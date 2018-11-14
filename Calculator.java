@@ -2,9 +2,9 @@
    Name: Chris Gawbill
    Things to Do:
                   Fix Sutraction Method (Outputting Negative)
-                  Further improve the Quadratic Equation
+                  Further improve the Quadratic Method
                   Graphing Capabilities
-                  GUI Interface with text box nad buttons
+                  GUI Interface with text box and buttons
                         Use String.split to get the values
 *************************************************************/
 import java.util.*;
@@ -201,17 +201,17 @@ public class Calculator{
       localmath = localmath-enmath3;
       enmath1 = 2 * enmath1;
       
-      double sqrt = (double) Math.sqrt(localmath);
+      int sqrt = (int) Math.sqrt(localmath);
       if(sqrt*sqrt == localmath){
          double a  = enmath2 + sqrt;
          double s = enmath2 - sqrt;
          
-         System.out.println("( " + a + " ) / " + enmath1 + " )");
-         System.out.println("( " + s + " ) / " + enmath1 + " )");
+         System.out.println("( " + a + "  / " + enmath1 + " )");
+         System.out.println("( " + s + "  / " + enmath1 + " )");
       
       }else{
-          System.out.println("( " + enmath2 + "+ sqrt( " + localmath + " ) / " + enmath1 + " )");
-          System.out.println("( " + enmath2 + "- sqrt( " + localmath + " ) / " + enmath1 + " )");
+          System.out.println("( " + enmath2 + " + sqrt( " + localmath + " ) / " + enmath1 + " )");
+          System.out.println("( " + enmath2 + " - sqrt( " + localmath + " ) / " + enmath1 + " )");
       }
       
       
