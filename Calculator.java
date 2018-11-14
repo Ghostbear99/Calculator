@@ -1,7 +1,6 @@
 /****************************************************************
    Name: Chris Gawbill
    Things to Do:
-                  Fix Sutraction Method (Outputting Negative)
                   Further improve the Quadratic Method
                   Graphing Capabilities
                   GUI Interface with text box and buttons
@@ -92,18 +91,62 @@ public class Calculator{
        }
 
    }
+     public void combineMethod(){
+       set = false;
+       input = scan.nextLine();
+       while(set == false){
+         input = scan.nextLine();
+         if(input.equals("Addition")){
+            anothoperat = true;
+            globalmath = globalmath+localmath;
+            set = true;
+         }else if(input.equals("Subtraction")){
+            anothoperat = true;
+            globalmath = globalmath-localmath;
+            set = true;
+         }else if(input.equals("Multiplication")){
+            anothoperat = true;
+            globalmath = globalmath*localmath;
+            set = true;
+         }else if(input.equals("Division")){
+            anothoperat = true;
+            globalmath = globalmath/localmath;
+            set = true;
+         }else if(input.equals("Output")){
+            Output();
+         }else{
+            System.out.println("ERROR_UNRECOGNIZED INPUT\nHere is What You Can Do\n------------------------------------"
+                                + "\n\tAddition\n\tSubtraction\n\tMultiplication\n\tDivision");
+         }
+       }
+
+   }
+
    public void Addition(){
       System.out.println("Enter in a Number");
       enmath1 = scan.nextDouble();
       System.out.println("Enter in a Number");
       enmath2 = scan.nextDouble();
       
-      localmath = enmath1+enmath2;
       globalmath = globalmath + localmath;
-      
-      System.out.println("What Do You Want to do Next?");
+      if(anothoperat == false){
+         localmath = enmath1+enmath2;
+         System.out.println("What Do You Want to do Next?");
+         inmathInput();
+      }
+      System.out.println("Do you want to do something other than adding to your last result?\nEnter Yes or No");
+      input = scan.nextLine();
+      input = scan.nextLine();
+      if(input.equals("Yes")){
+         System.out.println("What do you want to do?");
+         combineMethod();
+         System.out.println("What do you want to do?");
+         inmathInput();
+      }
+      localmath = enmath1+enmath2;
+      System.out.println("What do you want to do?");
       inmathInput();
-   }
+      }
    public void Subtraction(){
       System.out.println("Enter in a Number");
       enmath1 = scan.nextDouble();
@@ -111,17 +154,25 @@ public class Calculator{
       enmath2 = scan.nextDouble();
       
       localmath = enmath1 - enmath2;
-      if(anothoperat  = false){
+      if(anothoperat  == false){
          globalmath = localmath;
          System.out.println("What Do You Want to do Next:");
          inmathInput();
       }
+      System.out.println("Do you want to do something other than subtracting to your last result?\nEnter Yes or No");
+      input = scan.nextLine();
+      input = scan.nextLine();
+      if(input.equals("Yes")){
+         System.out.println("What do you want to do?");
+         combineMethod();
+         System.out.println("What do you want to do?");
+         inmathInput();
+      }
       globalmath = globalmath - localmath;
-      System.out.println("What Do You Want to do Next:");
+      System.out.println("What do you want to do?");
       inmathInput();
-      
+      }
    
-   }
    public void Multiplication(){
       System.out.println("Enter in a Number");
       enmath1 = scan.nextDouble();
@@ -135,9 +186,19 @@ public class Calculator{
             System.out.println("What Do You Want to do Next:");
             inmathInput();
          }
+         System.out.println("Do you want to do something other than subtracting to your last result?\nEnter Yes or No");
+         input = scan.nextLine();
+         input = scan.nextLine();
+         if(input.equals("Yes")){
+            System.out.println("What do you want to do?");
+            combineMethod();
+            System.out.println("What do you want to do?");
+            inmathInput();
+         }
          globalmath = globalmath * localmath;
-         System.out.println("What Do You Want to do Next:");
+         System.out.println("What do you want to do?");
          inmathInput();
+
    
       }else{
          localmath = enmath1 * enmath2;
@@ -146,9 +207,20 @@ public class Calculator{
             System.out.println("What Do You Want to do Next:");
             inmathInput();
          }
+         System.out.println("Do you want to do something other than subtracting to your last result?\nEnter Yes or No");
+         input = scan.nextLine();
+         input = scan.nextLine();
+         if(input.equals("Yes")){
+            System.out.println("What do you want to do?");
+            combineMethod();M
+            System.out.println("What do you want to do?");
+            inmathInput();
+         }
          globalmath = globalmath * localmath;
-         System.out.println("What Do You Want to do Next:");
+         System.out.println("What do you want to do?");
          inmathInput();
+
+
 
       }
    }
@@ -165,9 +237,19 @@ public class Calculator{
             System.out.println("What Do You Want to do Next:");
             inmathInput();
          }
+         System.out.println("Do you want to do something other than subtracting to your last result?\nEnter Yes or No");
+         input = scan.nextLine();
+         if(input.equals("Yes")){
+            System.out.println("What do you want to do?");
+            combineMethod();
+            System.out.println("What do you want to do?");
+            inmathInput();
+         }
          globalmath = globalmath/localmath;
-         System.out.println("What Do You Want to do Next:");
+         System.out.println("What do you want to do?");
          inmathInput();
+
+
 
       }else{
          localmath = enmath1/enmath2;
@@ -176,8 +258,16 @@ public class Calculator{
             System.out.println("What Do You Want to do Next:");
             inmathInput();
          }
+         System.out.println("Do you want to do something other than subtracting to your last result?\nEnter Yes or No");
+         input = scan.nextLine();
+         if(input.equals("Yes")){
+            System.out.println("What do you want to do?");
+            combineMethod();
+            System.out.println("What do you want to do?");
+            inmathInput();
+         }
          globalmath = globalmath/localmath;
-         System.out.println("What Do You Want to do Next:");
+         System.out.println("What do you want to do?");
          inmathInput();
 
       }
