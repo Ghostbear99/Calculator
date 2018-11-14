@@ -1,8 +1,8 @@
 /****************************************************************
    Name: Chris Gawbill
    Things to Do:
-                  Fix Sutraction Method (Outputting Negative);
-                  Solve Quadratic Equations
+                  Fix Sutraction Method (Outputting Negative)
+                  Further improve the Quadratic Equation
                   Graphing Capabilities
                   GUI Interface with text box nad buttons
                         Use String.split to get the values
@@ -20,6 +20,7 @@ public class Calculator{
    // Handles the two number input
    double enmath1 = 0;
    double enmath2 = 0;
+   double enmath3 = 0;
    // Handles menu input
    String input = null;
    
@@ -43,8 +44,8 @@ public class Calculator{
          }else if(input.equals("Division")){
             Division();
             set = true;
-         }else if(input.equals("Quadratics")){
-            // Call Quadtratic Method
+         }else if(input.equals("Quadratic")){
+            Quadratic();
             set = true;
          }else if(input.equals("Graphing")){
             // Call Graphing Method
@@ -180,6 +181,41 @@ public class Calculator{
          inmathInput();
 
       }
+   }
+   public void Quadratic(){
+      System.out.println("Enter in an a");
+      enmath1 = scan.nextDouble();
+      System.out.println("Enter in a b");
+      enmath2 = scan.nextDouble();
+      System.out.println("Enter in a c");
+      enmath3 = scan.nextDouble();
+      
+      double origenmath2 = 0;
+      
+      origenmath2 = enmath2;
+      
+      enmath2 = -enmath2;
+      
+      localmath = origenmath2 * origenmath2;
+      enmath3 = 4*enmath1* enmath3;
+      localmath = localmath-enmath3;
+      enmath1 = 2 * enmath1;
+      
+      double sqrt = (double) Math.sqrt(localmath);
+      if(sqrt*sqrt == localmath){
+         double a  = enmath2 + sqrt;
+         double s = enmath2 - sqrt;
+         
+         System.out.println("( " + a + " ) / " + enmath1 + " )");
+         System.out.println("( " + s + " ) / " + enmath1 + " )");
+      
+      }else{
+          System.out.println("( " + enmath2 + "+ sqrt( " + localmath + " ) / " + enmath1 + " )");
+          System.out.println("( " + enmath2 + "- sqrt( " + localmath + " ) / " + enmath1 + " )");
+      }
+      
+      
+      
    }
    public void Output(){
       System.out.println("Output: " + globalmath);
