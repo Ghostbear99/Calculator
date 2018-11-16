@@ -212,7 +212,7 @@ public class Calculator{
          input = scan.nextLine();
          if(input.equals("Yes")){
             System.out.println("What do you want to do?");
-            combineMethod();M
+            combineMethod();
             System.out.println("What do you want to do?");
             inmathInput();
          }
@@ -309,6 +309,11 @@ public class Calculator{
    }
    public void Output(){
       System.out.println("Output: " + globalmath);
+      System.out.println("\nDo you want to keep doing math?");
+      input = scan.nextLine();
+      if(input.equals("Yes")){
+         setUp();
+      }
       System.exit(1);
    }
 }
