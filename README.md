@@ -1,5 +1,5 @@
 # Calculator--WIP-
-Simple Calculator that can do simple things. Eventually will be able to do quadratic equation and graphing. It will eventually have a GUI interface.
+Simple Calculator that can do simple things. Can also solve a quadratic equation. It will also be able to do graphing. It will eventually have a GUI interface.
 
 METHODS
   
