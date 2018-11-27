@@ -6,8 +6,10 @@
                   GUI Interface with text box and buttons
                         Use String.split to get the values
 *************************************************************/
+import java.awt.*;
 import java.util.*;
-public class Calculator{
+import javax.swing.*;
+public class Calculator extends JPanel{
 
    Scanner scan = new Scanner(System.in); 
    boolean set = false;
@@ -306,6 +308,12 @@ public class Calculator{
       
       
       
+   }
+   public void Graph(){
+      JPanel p = new JPanel(new BorderLayout());
+   }
+   public void paint(Graphics g){
+   
    }
    public void Output(){
       System.out.println("Output: " + globalmath);
