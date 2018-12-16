@@ -27,3 +27,4 @@ METHODS
   
  Graphing: Allow the user to enter in a standard form equation and the calculator will draw the graph
   
+  Inteface: Make a JavaFX Interface
