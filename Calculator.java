@@ -6,11 +6,27 @@
                   GUI Interface with text box and buttons
                         Use String.split to get the values
 *************************************************************/
-import java.awt.*;
-import java.util.*;
-import javax.swing.*;
-public class Calculator extends JPanel{
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
+public class Calculator extends Application {
+   public static void main(String [] args){
+      launch(args);
+   }
+   @Override
+   public void start(Stage primaryStage) throws Exception {
+      primaryStage.setTitle("Calculator");
+      FXMLLoader loader = new FXMLLoader(getClass().getResource("CalcHome.fxml"));
+      Parent root = loader.load();
+      Scene scene = new Scene(root);
+      primaryStage.setScene(scene);
+
+      primaryStage.show();
+   }
+   /*
    Scanner scan = new Scanner(System.in); 
    boolean set = false;
    boolean anothoperat  = false;
@@ -324,4 +340,5 @@ public class Calculator extends JPanel{
       }
       System.exit(1);
    }
+   */
 }
