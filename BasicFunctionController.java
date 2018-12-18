@@ -130,36 +130,36 @@ public class BasicFunctionController implements Initializable {
     }
     public void Add(double a, double b){
         if(a == 0){
-            localsum = a;
-        }else if(b == 0){
             localsum = b;
+        }else if(b == 0){
+            localsum = a;
         }else {
             localsum = a + b;
         }
     }
     public void Sub(double a, double b){
         if(a == 0){
-          localsum = a;
+          localsum = b;
         }else if(b == 0){
-            localsum = b;
+            localsum = a;
         }else {
             localsum = a - b;
         }
     }
     public void Mult(double a, double b){
         if(a == 0){
-            localsum = a;
-        }else if(b == 0){
             localsum = b;
+        }else if(b == 0){
+            localsum = a;
         }else {
             localsum = a * b;
         }
     }
     public void Div(double a, double b){
         if(a == 0){
-            localsum = a;
-        }else if(b == 0){
             localsum = b;
+        }else if(b == 0){
+            localsum = a;
         }else {
             localsum = a / b;
         }
