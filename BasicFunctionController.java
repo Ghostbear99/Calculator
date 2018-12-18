@@ -33,8 +33,8 @@ public class BasicFunctionController implements Initializable {
     private ChoiceBox next;
 
     public void doMath(ActionEvent event){
-        String out = sign.getItems().toString()''
-        String what = next.getItems().toString();
+        String out = sign.getValue().toString();
+        String what = next.getValue().toString();
         double num1  = Double.parseDouble(number1.getText());
         double num2  = Double.parseDouble(number2.getText());
         if(out.equals("+")){
@@ -74,6 +74,7 @@ public class BasicFunctionController implements Initializable {
             }else if(what.equals("Divide")){
                 a = 4;
             }else{
+                a = 0;
                 String a = String.valueOf(globalV);
                 output.setText(a);
             }
@@ -89,6 +90,7 @@ public class BasicFunctionController implements Initializable {
             }else if(what.equals("Divide")){
                 a = 4;
             }else{
+                a = 0;
                 String a = String.valueOf(globalV);
                 output.setText(a);
             }
@@ -104,6 +106,7 @@ public class BasicFunctionController implements Initializable {
             }else if(what.equals("Divide")){
                 a = 4;
             }else{
+                a = 0;
                 String a = String.valueOf(globalV);
                 output.setText(a);
             }
@@ -119,6 +122,7 @@ public class BasicFunctionController implements Initializable {
             }else if(what.equals("Divide")){
                 a = 4;
             }else{
+                a = 0;
                 String a = String.valueOf(globalV);
                 output.setText(a);
             }
