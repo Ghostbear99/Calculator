@@ -31,7 +31,7 @@
             <ButtonBar layoutY="328.0" prefHeight="40.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
               <buttons>
                 <Button mnemonicParsing="false" onAction="#changeSceenBasic" text="Basic Function" />
-                  <Button mnemonicParsing="false" text="Quadratic" />
+                  <Button mnemonicParsing="false" onAction="#changeSceenQuadratic" text="Quadratic" />
                   <Button mnemonicParsing="false" text="Graphing" />
               </buttons>
             </ButtonBar>

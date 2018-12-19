@@ -9,20 +9,19 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="QuadraticController">
    <children>
       <Label layoutX="86.0" layoutY="115.0" text="a" />
       <Label layoutX="253.0" layoutY="115.0" text="b" />
       <Label layoutX="399.0" layoutY="115.0" text="c" />
-      <TextField layoutX="104.0" layoutY="111.0" prefHeight="26.0" prefWidth="112.0" />
-      <TextField layoutX="276.0" layoutY="111.0" prefHeight="26.0" prefWidth="112.0" />
-      <TextField layoutX="425.0" layoutY="111.0" prefHeight="26.0" prefWidth="112.0" />
-      <TextField layoutY="246.0" prefHeight="26.0" prefWidth="600.0" />
+      <TextField fx:id="value1" layoutX="104.0" layoutY="111.0" prefHeight="26.0" prefWidth="112.0" />
+      <TextField fx:id="value2" layoutX="276.0" layoutY="111.0" prefHeight="26.0" prefWidth="112.0" />
+      <TextField fx:id="value3" layoutX="425.0" layoutY="111.0" prefHeight="26.0" prefWidth="112.0" />
+      <TextField fx:id="output" layoutY="246.0" prefHeight="26.0" prefWidth="600.0" />
       <ButtonBar layoutX="4.0" layoutY="360.0" prefHeight="40.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
         <buttons>
-          <Button mnemonicParsing="false" text="Apply" />
-            <Button mnemonicParsing="false" text="Home" />
+          <Button mnemonicParsing="false" onAction="#Quadratic" text="Apply" />
+            <Button mnemonicParsing="false" onAction="#changeSceneHome" text="Home" />
         </buttons>
       </ButtonBar>
       <MenuBar layoutY="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
