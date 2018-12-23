@@ -28,14 +28,13 @@ public class CalcHomeController implements Initializable {
         window.show();
     }
     public void changeSceenGraph(ActionEvent event) throws IOException{
-        /*
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Graphing.fxml"));
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Graph.fxml"));
         Parent searchView = loader.load();
         Scene searchScene = new Scene(searchView);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         window.setScene(searchScene);
         window.show();
-        */
     }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
