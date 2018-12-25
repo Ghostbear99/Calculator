@@ -36,6 +36,15 @@ public class CalcHomeController implements Initializable {
         window.setScene(searchScene);
         window.show();
     }
+    public void changeSceenCalc(ActionEvent event) throws IOException{
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("CalculatorInterface.fxml"));
+        Parent searchView = loader.load();
+        Scene searchScene = new Scene(searchView);
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        window.setScene(searchScene);
+        window.show();
+    }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
