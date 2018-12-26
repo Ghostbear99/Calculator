@@ -59,7 +59,7 @@ public class BasicCalcController implements Initializable {
     }
     public void add(ActionEvent event){
         sign.add("+");
-        out.append(" + ");
+        out.append("+");
         output.setText(String.valueOf(out));
     }
     public void subtract(ActionEvent event) {
@@ -75,10 +75,6 @@ public class BasicCalcController implements Initializable {
     public void divide(ActionEvent event) {
         sign.add("/");
         out.append("/");
-        output.setText(String.valueOf(out));
-    }
-    public void decimal(ActionEvent event){
-        out.append(".");
         output.setText(String.valueOf(out));
     }
     public void calc(ActionEvent event){
@@ -118,6 +114,9 @@ public class BasicCalcController implements Initializable {
            num.add(i, num.get(i+1));
            num.add(i+1, null);
         }
+    }
+    public void clear(ActionEvent event){
+        output.clear();
     }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
