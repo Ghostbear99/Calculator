@@ -8,12 +8,14 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.Scanner;
 
 public class BasicCalcController implements Initializable {
     @FXML
     private TextField output;
     StringBuilder out = new StringBuilder();
-    List<String> sign = new ArrayList<String>();
+    List<String> sign = new ArrayList<>();
+    List<Double> num = new ArrayList<>();
 
     public void zero(ActionEvent event){
         out.append("0");
@@ -74,6 +76,48 @@ public class BasicCalcController implements Initializable {
         sign.add("/");
         out.append("/");
         output.setText(String.valueOf(out));
+    }
+    public void decimal(ActionEvent event){
+        out.append(".");
+        output.setText(String.valueOf(out));
+    }
+    public void calc(ActionEvent event){
+        String s = out.toString();
+        String sanitizedText = s.replaceAll("[^\\w\\s\\.]", " ");
+        String [] result = sanitizedText.split(" ");
+        for(int i = 0 ; i < sign.size()+1; i++){
+            num.add(Double.parseDouble(result[i]));
+        }
+        double n = 0;
+        for(int i = 0 ; i < sign.size(); i++){
+            if(sign.get(i).equals("+")){
+                n = num.get(0) + num.get(1);
+                num.add(0,n);
+                move();
+            }else if(sign.get(i).equals("-")){
+                n = num.get(0) - num.get(1);
+                num.add(0,n);
+                move();
+            }else if(sign.get(i).equals("x")){
+                n = num.get(0) * num.get(1);
+                num.add(0,n);
+                move();
+            }else{
+                n = num.get(0)/num.get(1);
+                num.add(0,n);
+                move();
+            }
+        }
+        out = new StringBuilder();
+        output.clear();
+        output.setText(num.get(0).toString());
+
+    }
+    public void move(){
+        for(int i = 1; i < sign.size(); i++){
+           num.add(i, num.get(i+1));
+           num.add(i+1, null);
+        }
     }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
