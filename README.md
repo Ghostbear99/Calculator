@@ -21,10 +21,5 @@ METHODS
   
   Output: Prints out the value globalmath
   
-  -----WIP-------
- 
- Quadratic: The calculator will be able to do the quadratic equation
+  Inteface: Has a JavaFX Interface
   
- Graphing: Allow the user to enter in a standard form equation and the calculator will draw the graph
-  
-  Inteface: Make a JavaFX Interface
