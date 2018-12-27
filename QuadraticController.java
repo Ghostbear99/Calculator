@@ -39,6 +39,7 @@ public class QuadraticController implements Initializable {
         c = 4*a* c;
         localvalue = localvalue-c;
         a = 2 * a;
+        b = 0-b;
 
         int sqrt = (int) Math.sqrt(localvalue);
         if(sqrt*sqrt == localvalue){
