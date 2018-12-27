@@ -11,7 +11,7 @@
       <ButtonBar layoutY="352.0" prefHeight="40.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
         <buttons>
           <Button mnemonicParsing="false" onAction="#clear" text="Clear" />
-            <Button mnemonicParsing="false" text="Home" />
+            <Button mnemonicParsing="false" onAction="#changeScreenHome" text="Home" />
         </buttons>
       </ButtonBar>
       <Button layoutY="50.0" mnemonicParsing="false" onAction="#nine" prefHeight="95.0" prefWidth="102.0" text="9" />
