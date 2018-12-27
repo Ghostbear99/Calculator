@@ -68,8 +68,8 @@ public class BasicCalcController implements Initializable {
         output.setText(String.valueOf(out));
     }
     public void mult(ActionEvent event) {
-        sign.add("x");
-        out.append("x");
+        sign.add("*");
+        out.append("*");
         output.setText(String.valueOf(out));
     }
     public void divide(ActionEvent event) {
@@ -88,34 +88,41 @@ public class BasicCalcController implements Initializable {
         for(int i = 0 ; i < sign.size(); i++){
             if(sign.get(i).equals("+")){
                 n = num.get(0) + num.get(1);
-                num.add(0,n);
+                num.set(0,n);
                 move();
             }else if(sign.get(i).equals("-")){
                 n = num.get(0) - num.get(1);
-                num.add(0,n);
+                num.set(0,n);
                 move();
-            }else if(sign.get(i).equals("x")){
+            }else if(sign.get(i).equals("*")){
                 n = num.get(0) * num.get(1);
-                num.add(0,n);
+                num.set(0,n);
                 move();
             }else{
                 n = num.get(0)/num.get(1);
-                num.add(0,n);
+                num.set(0,n);
                 move();
             }
         }
         out = new StringBuilder();
+        out.append(num.get(0).toString());
+        sign.clear();
         output.clear();
         output.setText(num.get(0).toString());
 
     }
     public void move(){
         for(int i = 1; i < sign.size(); i++){
-           num.add(i, num.get(i+1));
-           num.add(i+1, null);
+            if(i == sign.size()-1){
+                num.remove(i);
+            }else {
+                num.set(i, num.get(i + 1));
+            }
         }
     }
     public void clear(ActionEvent event){
+        sign.clear();
+        out = new StringBuilder();
         output.clear();
     }
     @Override
