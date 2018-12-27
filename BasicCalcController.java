@@ -109,11 +109,18 @@ public class BasicCalcController implements Initializable {
         sign.clear();
         output.clear();
         output.setText(num.get(0).toString());
+        for(int i = 0; i < num.size(); i++){
+            num.remove(i);
+        }
+        if(num.size() != 0) {
+            num.remove(0);
+        }
 
     }
     public void move(){
-        for(int i = 1; i < sign.size(); i++){
-            if(i == sign.size()-1){
+        System.out.println(num.get(0));
+        for(int i = 1; i < num.size(); i++){
+            if(i == num.size()-1){
                 num.remove(i);
             }else {
                 num.set(i, num.get(i + 1));
