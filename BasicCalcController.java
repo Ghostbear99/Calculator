@@ -65,31 +65,39 @@ public class BasicCalcController implements Initializable {
     }
     public void add(ActionEvent event){
         sign.add("+");
-        out.append("+");
+        out.append(" + ");
         output.setText(String.valueOf(out));
     }
     public void subtract(ActionEvent event) {
         sign.add("-");
-        out.append("-");
+        out.append(" - ");
         output.setText(String.valueOf(out));
     }
     public void mult(ActionEvent event) {
         sign.add("*");
-        out.append("*");
+        out.append(" * ");
         output.setText(String.valueOf(out));
     }
     public void divide(ActionEvent event) {
         sign.add("/");
-        out.append("/");
+        out.append(" / ");
         output.setText(String.valueOf(out));
     }
     public void calc(ActionEvent event){
         String s = out.toString();
-        String sanitizedText = s.replaceAll("[^\\w\\s\\.]", " ");
-        String [] result = sanitizedText.split(" ");
-        for(int i = 0 ; i < sign.size()+1; i++){
-            num.add(Double.parseDouble(result[i]));
+        String [] result = s.split(" - | + | / | * ");
+        for(int i = 0 ; i < result.length; i++){
+            if(result[i].equals("*")) {
+
+            }else if(result[i].equals("+")){
+
+            }else{
+                num.add(Double.parseDouble(result[i]));
+            }
+
+
         }
+        System.out.println(num);
         double n = 0;
         for(int i = 0 ; i < sign.size(); i++){
             if(sign.get(i).equals("+")){

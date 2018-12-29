@@ -32,7 +32,6 @@
               <buttons>
                 <Button mnemonicParsing="false" onAction="#changeSceenBasic" text="Basic Function" />
                   <Button mnemonicParsing="false" onAction="#changeSceenQuadratic" text="Quadratic" />
-                  <Button mnemonicParsing="false" onAction="#changeSceenGraph" text="Graphing" />
                   <Button mnemonicParsing="false" onAction="#changeSceenCalc" text="Calculator" />
               </buttons>
             </ButtonBar>
