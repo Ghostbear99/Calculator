@@ -23,6 +23,10 @@ public class BasicCalcController implements Initializable {
     List<String> sign = new ArrayList<>();
     List<Double> num = new ArrayList<>();
 
+    /*
+    These methods tell the program what to do and output when buttons are pressed (0-9) and signs (+,-,/,x)\
+    Made the signs be spaced so the program does nto confuse the negative signs as meaning to subtract
+     */
     public void zero(ActionEvent event){
         out.append("0");
         output.setText(String.valueOf(out));
@@ -83,6 +87,12 @@ public class BasicCalcController implements Initializable {
         out.append(" / ");
         output.setText(String.valueOf(out));
     }
+    /*
+    This is the method that tells the program what to do when the user clicks the '=' butotn.
+    It first takes the whole output from the out StringBuilder and splits it to take out the signs.
+    For some reason the + and * signs are still included so we have to go over two spots to get the next number.
+    We then store those numbers in an array
+     */
     public void calc(ActionEvent event){
         String s = out.toString();
         String [] result = s.split(" - | + | / | * ");
@@ -99,6 +109,12 @@ public class BasicCalcController implements Initializable {
         }
         System.out.println(num);
         double n = 0;
+        /*
+        We take the first sign in the array list and get the next two numbers num ArrayList
+        and depending on the sign does that action on those two numbers.7
+        Onc done we have to make sure that the num ArrayList is empty so if the user wants to continue with
+        the calculations, the user can.
+         */
         for(int i = 0 ; i < sign.size(); i++){
             if(sign.get(i).equals("+")){
                 n = num.get(0) + num.get(1);
@@ -131,6 +147,9 @@ public class BasicCalcController implements Initializable {
         }
 
     }
+    /*
+    We remove the spent numbers and move the numbers in the list to the left
+     */
     public void move(){
         for(int i = 1; i < num.size(); i++){
             if(i == num.size()-1){
@@ -140,11 +159,17 @@ public class BasicCalcController implements Initializable {
             }
         }
     }
+    /*
+    This clears the prior calculations from the program so the user can start fresh
+     */
     public void clear(ActionEvent event){
         sign.clear();
         out = new StringBuilder();
         output.clear();
     }
+    /*
+    This changes the scene so it switches to the Home Screen
+     */
     public void changeScreenHome(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("CalcHome.fxml"));
         Parent searchView = loader.load();

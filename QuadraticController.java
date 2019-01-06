@@ -22,7 +22,10 @@ public class QuadraticController implements Initializable {
     private TextField value3;
     @FXML
     private TextField output;
-
+    /*
+    Method calculates the Quadratic Equation
+    If at the end b^2-4ac makes a perfect root, then the program will solve the entire top half of the result of the quadratic equation
+     */
     public void Quadratic(ActionEvent event){
         double a = Double.parseDouble(value1.getText());
         double b = Double.parseDouble(value2.getText());
@@ -30,8 +33,6 @@ public class QuadraticController implements Initializable {
         double localvalue;
 
         double origenmath2 = 0;
-
-        origenmath2 = b;
 
         origenmath2 = -b;
 

@@ -16,8 +16,6 @@ import java.util.ResourceBundle;
 public class BasicFunctionController implements Initializable {
 
     private double globalV;
-    private double localV1;
-    private double localV2;
     private double localsum;
     private int a = 0;
 
@@ -31,7 +29,12 @@ public class BasicFunctionController implements Initializable {
     private ChoiceBox sign;
     @FXML
     private ChoiceBox next;
-
+    /*
+    Method that takes into account what the user inputs so it does those actions
+    The program does the caculations that the user wants
+    Depending on what the user selected in the next ChoiceBox, a value is assigned to int a
+    The program checks that value of 'a' and does actions (add, subtract, multiply, divide) with 'globalV' and 'localsum'
+     */
     public void doMath(ActionEvent event){
         String out = sign.getValue().toString();
         String what = next.getValue().toString();
@@ -128,6 +131,10 @@ public class BasicFunctionController implements Initializable {
             }
         }
     }
+    /*
+    These methods do their respective functions(add, subtract, multiply, and divide)
+    If one of the numbers is zero then it ignores that number in the calculation
+     */
     public void Add(double a, double b){
         if(a == 0){
             localsum = b;
@@ -164,6 +171,9 @@ public class BasicFunctionController implements Initializable {
             localsum = a / b;
         }
     }
+    /*
+    Changes the scene so it goes back the Home Scene
+     */
     public void changeSceneHome(ActionEvent event) throws IOException{
         FXMLLoader loader = new FXMLLoader(getClass().getResource("CalcHome.fxml"));
         Parent searchView = loader.load();
